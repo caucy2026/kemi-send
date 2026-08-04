@@ -1,18 +1,16 @@
-.idea
-
-# Rust workspace build output
-/target/
-
-# Linux AppImage
-/app/AppDir
-/app/appimage-build
-
-.refena_inspector/
-
-/secrets
-
-# FVM Version Cache
-.fvm/
-
-# macOS
+# LocalSend base .gitignore
+*.iml
+.gradle/
+/local.properties
+/.idea/
 .DS_Store
+/build/
+/captures/
+.externalNativeBuild/
+.cxx/
+
+# kemi-send additions
+bin/
+app/build/
+app/android/build/
+app/.dart_tool/
