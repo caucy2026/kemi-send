@@ -1,5 +1,5 @@
-display_name: LocalSend
-package_name: localsend
+display_name: KEMI Send
+package_name: kemi-send
 maintainer:
   name: Tienisto
   email: dev.tien.donam@gmail.com
