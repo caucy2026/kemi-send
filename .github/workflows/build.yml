@@ -1,10 +1,9 @@
 name: KEMI Send Build All Platforms
 
 on:
-  workflow_dispatch:
   push:
-    tags:
-      - 'v*'
+    tags: ['v*']
+  workflow_dispatch:
 
 env:
   FLUTTER_VERSION: "3.41.9"
