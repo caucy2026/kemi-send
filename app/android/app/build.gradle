@@ -68,7 +68,13 @@ android {
 
     buildTypes {
         release {
-            signingConfig signingConfigs.release
+            // Use release keystore if available (key.properties), else fall back to debug signing (CI/local without a key).
+            def keystoreProperties = new Properties()
+            def keystorePropertiesFile = rootProject.file('key.properties')
+            if (keystorePropertiesFile.exists()) {
+                keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+            }
+            signingConfig = keystorePropertiesFile.exists() ? signingConfigs.release : signingConfigs.debug
         }
         debug {
             applicationIdSuffix ".debug"

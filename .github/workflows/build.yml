@@ -178,14 +178,16 @@ jobs:
         working-directory: packages/localsend_isolates/rust_builder/cargokit/build_tool
         run: flutter pub get
 
-      - name: Build macOS (unsigned)
+      - name: Build macOS (ad-hoc signed)
         working-directory: app
         run: flutter build macos --release
 
-      - name: Create zip of .app
+      - name: Rename and zip .app
         working-directory: app
         run: |
           cd build/macos/Build/Products/Release
+          rm -rf "KEMI Send.app"
+          cp -R LocalSend.app "KEMI Send.app"
           zip -r ../../../../../../KEMI_Send-macos.app.zip "KEMI Send.app"
 
       - name: Upload macOS zip
