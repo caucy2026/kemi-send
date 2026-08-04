@@ -63,7 +63,7 @@ jobs:
         run: flutter build apk --release
 
       - name: Upload APK
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: kemi-send-android
           path: app/build/app/outputs/flutter-apk/*.apk
@@ -99,7 +99,7 @@ jobs:
           Compress-Archive -Path build/windows/x64/runner/Release/* -DestinationPath KEMI_Send-windows-x64.zip
 
       - name: Upload Windows zip
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: kemi-send-windows
           path: app/KEMI_Send-windows-x64.zip
@@ -147,7 +147,7 @@ jobs:
           tar -czf KEMI_Send-linux-x64.tar.gz -C dist KEMI_Send
 
       - name: Upload Linux tar.gz
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: kemi-send-linux
           path: app/KEMI_Send-linux-x64.tar.gz
@@ -191,7 +191,7 @@ jobs:
           zip -r ../../../../../../KEMI_Send-macos.app.zip "KEMI Send.app"
 
       - name: Upload macOS zip
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: kemi-send-macos
           path: app/KEMI_Send-macos.app.zip
