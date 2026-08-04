@@ -7,11 +7,11 @@ script:
 AppDir:
   path: AppDir
   app_info:
-    id: org.localsend.localsend_app
-    name: LocalSend
-    icon: localsend
+    id: org.kemi.send
+    name: KEMI Send
+    icon: kemi_send
     version: latest
-    exec: localsend_app
+    exec: kemi_send
     exec_args: $@
   apt:
     arch:

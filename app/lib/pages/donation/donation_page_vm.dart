@@ -2,7 +2,6 @@ import 'package:localsend_app/model/state/purchase_state.dart';
 /*
 import 'package:localsend_app/provider/purchase_provider.dart';
 */
-import 'package:localsend_app/util/native/platform_check.dart';
 import 'package:refena_flutter/refena_flutter.dart';
 
 class DonationPageVm {
