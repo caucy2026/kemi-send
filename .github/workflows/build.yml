@@ -14,7 +14,7 @@ jobs:
     name: Build Android APK
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: Remove proprietary dependencies
         run: sh support/scripts/remove_proprietary_dependencies.sh
@@ -73,7 +73,7 @@ jobs:
       - name: Fix long file paths
         run: git config --system core.longpaths true
 
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: Install Flutter
         uses: subosito/flutter-action@v2
@@ -109,7 +109,7 @@ jobs:
     name: Build Linux
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: Install dependencies
         run: |
@@ -151,7 +151,7 @@ jobs:
     name: Build macOS
     runs-on: macos-14
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: Install Flutter
         uses: subosito/flutter-action@v2
