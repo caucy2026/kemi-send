@@ -48,9 +48,6 @@ jobs:
           flutter-version: ${{ env.FLUTTER_VERSION }}
           channel: stable
 
-      - name: Install Rust
-        uses: dtolnay/rust-toolchain@stable
-
       - name: Dependencies (app)
         working-directory: app
         run: flutter pub get
@@ -73,6 +70,9 @@ jobs:
     name: Build Windows
     runs-on: windows-latest
     steps:
+      - name: Fix long file paths
+        run: git config --system core.longpaths true
+
       - uses: actions/checkout@v6
 
       - name: Install Flutter
@@ -122,9 +122,6 @@ jobs:
           flutter-version: ${{ env.FLUTTER_VERSION }}
           channel: stable
 
-      - name: Install Rust
-        uses: dtolnay/rust-toolchain@stable
-
       - name: Dependencies (app)
         working-directory: app
         run: flutter pub get
@@ -161,9 +158,6 @@ jobs:
         with:
           flutter-version: ${{ env.FLUTTER_VERSION }}
           channel: stable
-
-      - name: Install Rust
-        uses: dtolnay/rust-toolchain@stable
 
       - name: Dependencies (app)
         working-directory: app
